@@ -35,5 +35,14 @@ def equal_press():
         input_text.set("error")
 
 
+# clear display area
+def clear():
+    global expression
+    input_text.set("")
+    expression = ""
+
+
+
+
 # To load calculator window
 window.mainloop()
