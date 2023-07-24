@@ -15,11 +15,24 @@ input_field = Entry(window, textvariable=input_text, bg="#90EE90", bd="7px", fg=
 input_field.grid(row="0", columnspan="4")
 expression = ""
 
+
 # press method
 def press(press_value):
     global expression
     expression = expression + str(press_value)
     input_text.set(expression)
+
+
+# calculate total and error checking
+def equal_press():
+    try:
+        global expression
+        total = str(eval(expression))
+        input_text.set(total)
+        expression = ""
+
+    except ZeroDivisionError:
+        input_text.set("error")
 
 
 # To load calculator window
