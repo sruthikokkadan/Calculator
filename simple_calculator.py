@@ -11,18 +11,16 @@ window.resizable(0, 0)
 
 # input field entry
 input_text = StringVar()
-input_field = Entry(window, textvariable=input_text, bg="#90EE90", bd="7px", fg="black",)
+input_field = Entry(window, textvariable=input_text, bg="#90EE90", bd="7px", fg="black", )
 input_field.grid(row="0", columnspan="4")
 expression = ""
 
-
-
-
-
-
-
+# press method
+def press(press_value):
+    global expression
+    expression = expression + str(press_value)
+    input_text.set(expression)
 
 
 # To load calculator window
 window.mainloop()
-
